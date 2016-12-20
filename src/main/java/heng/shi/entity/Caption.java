@@ -11,6 +11,7 @@ public class Caption extends BaseEntity {
     private User user;
     @ManyToOne
     private Book book;
+    private long parentId;
 
     public String getName() {
         return name;
@@ -42,5 +43,13 @@ public class Caption extends BaseEntity {
 
     public void setBook(Book book) {
         this.book = book;
+    }
+
+    public long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(long parentId) {
+        this.parentId = parentId;
     }
 }
