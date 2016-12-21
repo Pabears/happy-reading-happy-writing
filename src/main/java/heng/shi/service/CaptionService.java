@@ -1,16 +1,25 @@
-package heng.shi.repository;
+package heng.shi.service;
 
 import heng.shi.entity.Caption;
 import heng.shi.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface CaptionRepo extends JpaRepository<Caption, Long> {
+/**
+ * Created by shihe on 2016/12/21.
+ */
+public interface CaptionService {
+    Page<Caption> findAll(Pageable pageable);
+
+    Caption findOne(Long id);
+
+    Caption updateById(Long id);
+
+    void delete(Long id);
+
+    Caption save(Caption caption);
+
     Page<Caption> findByUser(User user, Pageable pageable);
 
     Page<Caption> findByParentId(Long parentId, Pageable pageable);
-
 }
