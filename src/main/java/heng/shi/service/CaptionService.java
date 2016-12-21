@@ -13,8 +13,6 @@ public interface CaptionService {
 
     Caption findOne(Long id);
 
-    Caption updateById(Long id);
-
     void delete(Long id);
 
     Caption save(Caption caption);

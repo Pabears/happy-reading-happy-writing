@@ -13,8 +13,6 @@ public interface BookService {
 
     Book findOne(Long id);
 
-    Book updateById(Long id);
-
     void delete(Long id);
 
     Book save(Book book);
