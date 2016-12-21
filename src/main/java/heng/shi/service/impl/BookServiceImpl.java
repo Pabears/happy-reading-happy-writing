@@ -27,7 +27,6 @@ public class BookServiceImpl implements BookService {
         return bookRepo.findOne(id);
     }
 
-
     @Override
     public void delete(Long id) {
         bookRepo.delete(id);
