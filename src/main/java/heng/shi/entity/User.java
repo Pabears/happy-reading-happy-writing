@@ -3,7 +3,6 @@ package heng.shi.entity;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.xml.crypto.Data;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class User extends BaseEntity{
         this.password = password;
     }
 
-    public boolean isMan() {
+    public boolean getMan() {
         return man;
     }
 
