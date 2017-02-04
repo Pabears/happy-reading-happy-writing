@@ -1,5 +1,6 @@
 package heng.shi.controller.ajax;
 
+
 import heng.shi.entity.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,33 +31,5 @@ public class AjaxTestController {
 		Writer writer = response.getWriter();
 		System.out.println(error);
 		return response;
-	}
-
-	public static void main(String[] args) {
-		User user = new User();
-		user.setUsername("lala");
-		Class cluss = user.getClass();
-		Field f = null;
-		try {
-			f = cluss.getDeclaredField("username");
-			f.setAccessible(true);
-		} catch (NoSuchFieldException | SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println(f.getType().getSimpleName());
-		if (String.class.equals(f.getType())) {
-			try {
-				System.out.println(f.get(user));
-			} catch (IllegalArgumentException | IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		for (Method method : cluss.getMethods()) {
-//			System.out.println(method.getName());
-		}
-
 	}
 }
