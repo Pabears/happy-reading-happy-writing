@@ -5,10 +5,12 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 import java.util.Date;
 
 @MappedSuperclass
-public class BaseEntity {
+public class BaseEntity implements Serializable {
+    private long serialVersionUID = 1L;
     @Id
     private long id;
     @CreationTimestamp

@@ -7,17 +7,35 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class User extends BaseEntity{
+public class User extends BaseEntity {
     private String username;
     private String password;
     private boolean man;
     private int age;
     private Date birthday;
     private String interesting;
+    private String email;
     @ManyToMany
     private List<Book> books;
     @OneToMany(mappedBy = "user")
     private List<Caption> captions;
+
+    public User() {
+    }
+
+    ;
+
+    public User(User user) {
+        this.username = user.getUsername();
+        this.password = user.getPassword();
+        this.man = user.getMan();
+        this.age = user.getAge();
+        this.birthday = user.getBirthday();
+        this.interesting = user.getInteresting();
+        this.email = user.getEmail();
+        this.books = user.getBooks();
+        this.captions = user.getCaptions();
+    }
 
     public String getUsername() {
         return username;
@@ -37,10 +55,6 @@ public class User extends BaseEntity{
 
     public boolean getMan() {
         return man;
-    }
-
-    public void setMan(boolean man) {
-        this.man = man;
     }
 
     public int getAge() {
@@ -83,4 +97,19 @@ public class User extends BaseEntity{
         this.captions = captions;
     }
 
+    public boolean isMan() {
+        return man;
+    }
+
+    public void setMan(boolean man) {
+        this.man = man;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

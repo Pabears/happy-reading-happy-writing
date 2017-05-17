@@ -74,20 +74,20 @@ public class RSAUtils {
     }
 
     // 调用方法举例
-    public static void main(String[] args) {
-        String source = "黑客帝国三部曲";
-        System.out.println("明文字符串：[" + source + "]");
-        try {
-            // 生成可用的密钥对并分别保存在文件中
-            generateKeyPair();
-            System.out.println("生成的公钥文件为：" + PUBLIC_KEY_FILE + ", 生成的私钥文件为：" + PRIVATE_KEY_FILE);
-            String cryptograph = encrypt(source, PUBLIC_KEY_FILE);// 生成的密文
-            System.out.println("加密之后的字符串为：[" + cryptograph + "]");
-            String text = decrypt(cryptograph, PRIVATE_KEY_FILE);// 解密密文
-            System.out.println("解密之后的字符串为：[" + text + "]");
-        } catch (Exception e) {
-            System.out.println("加解密过程中发生错误：" + e.getMessage());
-            return;
-        }
-    }
+//    public static void main(String[] args) {
+//        String source = "黑客帝国三部曲";
+//        System.out.println("明文字符串：[" + source + "]");
+//        try {
+//            // 生成可用的密钥对并分别保存在文件中
+//            generateKeyPair();
+//            System.out.println("生成的公钥文件为：" + PUBLIC_KEY_FILE + ", 生成的私钥文件为：" + PRIVATE_KEY_FILE);
+//            String cryptograph = encrypt(source, PUBLIC_KEY_FILE);// 生成的密文
+//            System.out.println("加密之后的字符串为：[" + cryptograph + "]");
+//            String text = decrypt(cryptograph, PRIVATE_KEY_FILE);// 解密密文
+//            System.out.println("解密之后的字符串为：[" + text + "]");
+//        } catch (Exception e) {
+//            System.out.println("加解密过程中发生错误：" + e.getMessage());
+//            return;
+//        }
+//    }
 }

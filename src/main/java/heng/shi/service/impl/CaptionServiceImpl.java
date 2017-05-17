@@ -51,6 +51,6 @@ public class CaptionServiceImpl implements CaptionService {
 
     @Override
     public Page<Caption> findByParentId(Long parentId, Pageable pageable) {
-        return captionRepo.findByParentId(parentId,pageable);
+        return captionRepo.findByParentId(parentId, pageable);
     }
 }
