@@ -17,12 +17,15 @@
 package heng.shi.conf;
 
 import heng.shi.repository.ActiveWebSocketUserRepository;
+import heng.shi.websocket.MyWebSocketHandler;
 import heng.shi.websocket.WebSocketConnectHandler;
 import heng.shi.websocket.WebSocketDisconnectHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.session.ExpiringSession;
+import org.springframework.web.socket.WebSocketHandler;
 
 /**
  * These handlers are separated from WebSocketConfig because they are specific to this
@@ -45,5 +48,10 @@ public class WebSocketHandlersConfig<S extends ExpiringSession> {
             SimpMessageSendingOperations messagingTemplate,
             ActiveWebSocketUserRepository repository) {
         return new WebSocketDisconnectHandler<S>(messagingTemplate, repository);
+    }
+
+    @Bean
+    public WebSocketHandler webSocketHandler(RedisTemplate<String,String> redisTemplate){
+        return new MyWebSocketHandler(redisTemplate);
     }
 }

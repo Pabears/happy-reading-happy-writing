@@ -50,6 +50,10 @@ public class MessageController {
 
     @MessageMapping("/im")
     public void im(InstantMessage im, @CurrentUser User currentUser) {
+        if (currentUser==null){
+            System.out.println("fuck null!");
+        }
+        System.out.println("/im "+currentUser);
         im.setFrom(currentUser.getUsername());
 
         this.messagingTemplate.convertAndSendToUser(im.getTo(), "/queue/messages", im);

@@ -112,4 +112,17 @@ public class User extends BaseEntity {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", man=" + man +
+                ", age=" + age +
+                ", birthday=" + birthday +
+                ", interesting='" + interesting + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
